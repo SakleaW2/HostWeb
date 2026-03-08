@@ -46,9 +46,7 @@
 
 После публикации сайт доступен по ссылке:
 
-https://username.github.io/sakleaw-studio-site
-
-(замените `username` на имя вашего аккаунта GitHub)
+https://sakleaw2.github.io/HostWeb/
 
 ---
 
