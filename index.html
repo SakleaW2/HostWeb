@@ -1,149 +1,85 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="ru">
-
-<head>
-    <!-- Кодировка -->
-    <meta charset="UTF-8">
-    <!-- Адаптивность -->
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Sakleaw Studio</title>
-    <!-- Подключение CSS -->
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css" />
+  </head>
 
-</head>
-
-<body>
-    <!-- ================================= -->
-    <!-- HEADER -->
-    <!-- ================================= -->
+  <body>
     <header>
-        <div class="container header">
-            <div class="logo">
-                Sakleaw<span>Studio</span>
-            </div>
-            <nav>
-                <a href="#about">О нас</a>
-                <a href="#services">Услуги</a>
-                <a href="#portfolio">Портфолио</a>
-                <a href="#contacts">Контакты</a>
-            </nav>
-            <a class="btn" href="#order">
-                Заказать
-            </a>
-        </div>
+      <div class="container header">
+        <div class="logo">Sakleaw<span>Studio</span></div>
+        <nav>
+          <a href="#about">О нас</a>
+          <a href="#services">Услуги</a>
+          <a href="#portfolio">Портфолио</a>
+          <a href="#contacts">Контакты</a>
+        </nav>
+        <a class="btn" href="#order"> Заказать </a>
+      </div>
     </header>
 
-    <!-- ================================= -->
-    <!-- HERO -->
-    <!-- ================================= -->
     <section class="hero" id="about">
-        <div class="container hero-box">
-            <h1>
-                Создаем современные сайты
-            </h1>
-            <p>
-                Разработка сайтов, лендингов и веб-сервисов
-                для бизнеса и стартапов
-            </p>
-            <a class="btn big" href="#order">
-                Начать проект
-            </a>
-        </div>
+      <div class="container hero-box">
+        <h1>Создаем современные сайты</h1>
+        <p>
+          Разработка сайтов, лендингов и веб-сервисов для бизнеса и стартапов
+        </p>
+        <a class="btn big" href="#order"> Начать проект </a>
+      </div>
     </section>
 
-    <!-- ================================= -->
-    <!-- SERVICES -->
-    <!-- ================================= -->
     <section id="services">
-        <div class="container">
-            <h2>Наши услуги</h2>
-            <div class="cards">
-                <div class="card">
-                    <h3>Лендинг</h3>
-                    <p>
-                        Одностраничный сайт
-                        для рекламы продукта
-                    </p>
-                </div>
-                <div class="card">
-                    <h3>Сайт-визитка</h3>
-                    <p>
-                        Небольшой сайт
-                        с информацией о компании
-                    </p>
-                </div>
-                <div class="card">
-                    <h3>Интернет-магазин</h3>
-                    <p>
-                        Каталог товаров
-                        с возможностью покупки
-                    </p>
-                </div>
-            </div>
+      <div class="container">
+        <h2>Наши услуги</h2>
+        <div class="cards">
+          <div class="card">
+            <h3>Лендинг</h3>
+            <p>Одностраничный сайт для рекламы продукта</p>
+          </div>
+          <div class="card">
+            <h3>Сайт-визитка</h3>
+            <p>Небольшой сайт с информацией о компании</p>
+          </div>
+          <div class="card">
+            <h3>Интернет-магазин</h3>
+            <p>Каталог товаров с возможностью покупки</p>
+          </div>
         </div>
+      </div>
     </section>
 
-    <!-- ================================= -->
-    <!-- PORTFOLIO -->
-    <!-- ================================= -->
     <section id="portfolio">
-        <div class="container">
-            <h2>Портфолио</h2>
-            <div class="gallery">
-                <div class="work">Проект 1</div>
-                <div class="work">Проект 2</div>
-                <div class="work">Проект 3</div>
-            </div>
+      <div class="container">
+        <h2>Портфолио</h2>
+        <div class="gallery">
+          <div class="work">Проект 1</div>
+          <div class="work">Проект 2</div>
+          <div class="work">Проект 3</div>
         </div>
+      </div>
     </section>
-
-    <!-- ================================= -->
-    <!-- ORDER FORM -->
-    <!-- ================================= -->
 
     <section id="order">
-        <div class="container form-box">
-            <h2>Оставить заявку</h2>
-            <form onsubmit="return handleSubmit(event)">
-                <input
-                        type="text"
-                        placeholder="Ваше имя"
-                        required
-                >
-                <input
-                        type="email"
-                        placeholder="Email"
-                        required
-                >
-                <textarea
-                        placeholder="Сообщение"
-                ></textarea>
-                <button class="btn">
-                    Отправить
-                </button>
-                <p id="status"></p>
-            </form>
-        </div>
+      <div class="container form-box">
+        <h2>Оставить заявку</h2>
+        <form action="mailto:a4bog@bog.com" method="POST" enctype="text/plain">
+          <input type="text" name="Имя" placeholder="Ваше имя" required />
+          <input type="email" name="Email" placeholder="Email" required />
+          <textarea name="Сообщение" placeholder="Сообщение"></textarea>
+          <button class="btn">Отправить</button>
+        </form>
+      </div>
     </section>
 
-    <!-- ================================= -->
-    <!-- FOOTER -->
-    <!-- ================================= -->
-
     <footer>
-        <div class="container">
-            © <span id="year"></span> Sakleaw Studio
-        </div>
+      <div class="container">© <span id="year"></span> Sakleaw Studio</div>
     </footer>
-    <!-- ================================= -->
-    <!-- КНОПКА НАВЕРХ -->
-    <!-- ================================= -->
-    <button id="topBtn">
-        ↑
-    </button>
 
-    <!-- Подключение JavaScript -->
+    <button id="topBtn">↑</button>
+
     <script src="script.js"></script>
-
-</body>
+  </body>
 </html>
