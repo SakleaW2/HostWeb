@@ -1,8 +1,6 @@
-/* ================= ГОД В FOOTER ================= */
+
 
 document.getElementById("year").textContent = new Date().getFullYear();
-
-/* ================= КНОПКА ВВЕРХ ================= */
 
 const topBtn = document.getElementById("topBtn");
 
@@ -20,8 +18,6 @@ topBtn.onclick = () => {
     behavior: "smooth",
   });
 };
-
-/* ================= ФОРМА ================= */
 
 function handleSubmit(event) {
   event.preventDefault();
