@@ -7,6 +7,9 @@ body {
   color: white;
 }
 
+html {
+  scroll-behavior: smooth;
+}
 /* ================= КОНТЕЙНЕР ================= */
 
 .container {
@@ -21,6 +24,10 @@ header {
   background: rgba(18, 27, 47, 0.8);
   backdrop-filter: blur(10px);
   border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  /* Чтобы шапка header и nav не уходили при прокрутке вниз, нужно сделать header фиксированным или липким через CSS. */
+  position: sticky; 
+  top: 0;
+  z-index: 1000;
 }
 
 .header {
@@ -64,12 +71,13 @@ nav a:hover {
   color: white;
   border: none;
   cursor: pointer;
-  transition: 0.2s;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  
 }
 
 .btn:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(106, 92, 255, 0.4);
+   transform: translateY(-3px);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.25);
 }
 
 .big {
@@ -79,21 +87,58 @@ nav a:hover {
 /* ================= HERO ================= */
 
 .hero {
+  min-height: 300px;
+  display: flex;
+  align-items: center;
+
   padding: 100px 0;
   text-align: center;
+
+  background-image: url("images/hero-image.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  position: relative;
+  overflow: hidden;
+
+  animation: heroZoom 10s ease-in-out infinite alternate;
 }
 
 .hero h1 {
-  font-size: 40px;
-  margin-bottom: 15px;
+  font-size: 56px;
+  max-width: 760px;
+  margin: 0 auto 20px;
+  color: #ffffff;
 }
 
 .hero p {
-  color: #a7b2d6;
-  max-width: 500px;
-  margin: auto;
-  margin-bottom: 25px;
+  font-size: 20px;
+  max-width: 620px;
+  margin: 0 auto 32px;
+  color: rgba(255, 255, 255, 0.85);
 }
+
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(
+      90deg,
+      rgba(8, 15, 35, 0.82),
+      rgba(8, 15, 35, 0.45)
+    );
+}
+
+.hero-box {
+  position: relative;
+  z-index: 1;
+
+  animation: heroTextShow 0.9s ease forwards;
+
+}
+
 
 /* ================= КАРТОЧКИ ================= */
 
@@ -110,6 +155,8 @@ nav a:hover {
   padding: 25px;
   border-radius: 15px;
   transition: 0.2s;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.25);
 }
 
 .card:hover {
@@ -198,5 +245,28 @@ footer {
 
   .gallery {
     grid-template-columns: 1fr;
+  }
+}
+
+@keyframes heroZoom {
+  from {
+    background-size: 100%;
+  }
+
+  to {
+    background-size: 110%;
+  }
+}
+
+
+@keyframes heroTextShow {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
 }

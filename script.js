@@ -25,3 +25,5 @@ function handleSubmit(event) {
   document.getElementById("status").textContent = "Заявка отправлена!";
 }
 
+
+
